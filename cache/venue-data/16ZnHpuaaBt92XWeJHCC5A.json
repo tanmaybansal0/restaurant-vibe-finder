@@ -1,0 +1,142 @@
+{
+  "id": "16ZnHpuaaBt92XWeJHCC5A",
+  "alias": "olio-e-più-new-york-7",
+  "name": "Olio e Più",
+  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/CUpPgz_Q4QBHxxxxDJJTTA/o.jpg",
+  "is_claimed": true,
+  "is_closed": false,
+  "url": "https://www.yelp.com/biz/olio-e-pi%C3%B9-new-york-7?adjust_creative=DRvWc2Y0OLP_6JyWjgBJfA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=DRvWc2Y0OLP_6JyWjgBJfA",
+  "phone": "+12122436546",
+  "display_phone": "(212) 243-6546",
+  "review_count": 6401,
+  "categories": [
+    {
+      "alias": "pizza",
+      "title": "Pizza"
+    },
+    {
+      "alias": "italian",
+      "title": "Italian"
+    },
+    {
+      "alias": "cocktailbars",
+      "title": "Cocktail Bars"
+    }
+  ],
+  "rating": 4.5,
+  "location": {
+    "address1": "3 Greenwich Ave",
+    "address2": null,
+    "address3": "",
+    "city": "New York",
+    "zip_code": "10014",
+    "country": "US",
+    "state": "NY",
+    "display_address": [
+      "3 Greenwich Ave",
+      "New York, NY 10014"
+    ],
+    "cross_streets": "Christopher St & 10th St"
+  },
+  "coordinates": {
+    "latitude": 40.73406231935954,
+    "longitude": -73.99999980859876
+  },
+  "photos": [],
+  "price": "$$",
+  "hours": [
+    {
+      "open": [
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "0000",
+          "day": 0
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "0000",
+          "day": 1
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "0000",
+          "day": 2
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "0000",
+          "day": 3
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "0000",
+          "day": 4
+        },
+        {
+          "is_overnight": false,
+          "start": "1000",
+          "end": "0000",
+          "day": 5
+        },
+        {
+          "is_overnight": false,
+          "start": "1000",
+          "end": "0000",
+          "day": 6
+        }
+      ],
+      "hours_type": "REGULAR",
+      "is_open_now": true
+    }
+  ],
+  "attributes": {
+    "menu_url": "https://www.olioepiu.com/nyc-menu/"
+  },
+  "transactions": [
+    "delivery",
+    "pickup"
+  ],
+  "messaging": {
+    "url": "https://www.yelp.com/raq/16ZnHpuaaBt92XWeJHCC5A?adjust_creative=DRvWc2Y0OLP_6JyWjgBJfA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=DRvWc2Y0OLP_6JyWjgBJfA#popup%3Araq",
+    "use_case_text": "Message the Business"
+  },
+  "reviews": [
+    {
+      "id": "review1",
+      "rating": 5,
+      "text": "This place has an amazing ambiance! The lighting is perfect for a romantic dinner, and the staff is attentive without being intrusive. The pasta is authentic and delicious - definitely try the homemade fettuccine.",
+      "time_created": "2024-02-15 18:30:22",
+      "user": {
+        "name": "John D."
+      }
+    },
+    {
+      "id": "review2",
+      "rating": 4,
+      "text": "Great food and atmosphere. It can get a bit crowded on weekend evenings, but the intimate setting makes it perfect for date night. The wine selection is impressive and pairs wonderfully with their dishes.",
+      "time_created": "2024-01-20 19:15:42",
+      "user": {
+        "name": "Sarah M."
+      }
+    },
+    {
+      "id": "review3",
+      "rating": 5,
+      "text": "One of the coziest Italian spots in the city. The dim lighting and quiet background music create a wonderful atmosphere. Their tiramisu is to die for!",
+      "time_created": "2023-12-10 20:45:11",
+      "user": {
+        "name": "Michael T."
+      }
+    }
+  ],
+  "environment": {
+    "lighting": "moderate",
+    "crowdedness": "moderate"
+  },
+  "cached_at": "2025-03-09T00:16:38.574Z"
+}

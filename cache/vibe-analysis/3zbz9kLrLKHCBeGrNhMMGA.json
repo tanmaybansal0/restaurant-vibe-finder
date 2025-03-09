@@ -1,0 +1,45 @@
+{
+  "venue_id": "3zbz9kLrLKHCBeGrNhMMGA",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Intimate"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, warm lighting",
+      "noiseLevel": "Quiet, with soft background music",
+      "crowdedness": "Can get a bit crowded on weekends, but maintains an intimate setting",
+      "decor": "Elegant, with a French/Italian inspired design",
+      "music": "Quiet, background music that complements the atmosphere"
+    },
+    "suitableFor": [
+      "Date night",
+      "Intimate gatherings",
+      "Quiet dinners"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Authentic",
+      "Elegant",
+      "Quiet",
+      "Relaxed",
+      "Refined",
+      "Sophisticated",
+      "Welcoming"
+    ],
+    "similarVenueTypes": [
+      "Upscale bistros",
+      "Intimate wine bars",
+      "Romantic Italian restaurants"
+    ],
+    "uniqueAttributes": [
+      "Authentic French/Italian cuisine",
+      "Impressive wine selection that pairs well with the food",
+      "Attentive staff that creates a personalized dining experience"
+    ]
+  },
+  "cached_at": "2025-03-08T23:43:42.293Z"
+}

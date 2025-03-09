@@ -1,0 +1,45 @@
+{
+  "venue_id": "zRXMvxUX_rOliKZPpkWi_g",
+  "analysis": {
+    "primaryVibe": "romantic",
+    "secondaryVibes": [
+      "intimate",
+      "upscale"
+    ],
+    "ambienceFactors": {
+      "lighting": "dim",
+      "noiseLevel": "quiet",
+      "crowdedness": "moderate",
+      "decor": "elegant",
+      "music": "soft jazz"
+    },
+    "suitableFor": [
+      "date night",
+      "special occasions",
+      "business dinners"
+    ],
+    "vibeKeywords": [
+      "intimate",
+      "romantic",
+      "candlelit",
+      "quiet",
+      "elegant",
+      "sophisticated",
+      "refined",
+      "upscale",
+      "exclusive",
+      "private"
+    ],
+    "similarVenueTypes": [
+      "wine bars",
+      "fine dining",
+      "cocktail lounges"
+    ],
+    "uniqueAttributes": [
+      "handcrafted cocktails",
+      "exceptional service",
+      "intimate seating arrangements"
+    ]
+  },
+  "cached_at": "2025-03-09T00:26:35.371Z"
+}

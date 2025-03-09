@@ -1,0 +1,49 @@
+{
+  "venue_id": "EHINHIbLklEUShuANKjGgw",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Upscale"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, intimate lighting",
+      "noiseLevel": "Quiet, with background music",
+      "crowdedness": "Can get crowded on weekends, but maintains an intimate setting",
+      "decor": "Elegant, with a Spanish/Italian influence",
+      "music": "Soft, background music"
+    },
+    "suitableFor": [
+      "Date night",
+      "Intimate gatherings",
+      "Business meetings"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Upscale",
+      "Authentic",
+      "Quiet",
+      "Elegant",
+      "Sophisticated",
+      "Relaxed",
+      "Inviting",
+      "Warm",
+      "Charming",
+      "Refined",
+      "Intimate"
+    ],
+    "similarVenueTypes": [
+      "Upscale wine bars",
+      "Intimate tapas/Spanish restaurants",
+      "Cozy Italian bistros"
+    ],
+    "uniqueAttributes": [
+      "Authentic Spanish/Italian cuisine",
+      "Impressive wine selection",
+      "Intimate, romantic ambiance"
+    ]
+  },
+  "cached_at": "2025-03-08T23:43:33.077Z"
+}

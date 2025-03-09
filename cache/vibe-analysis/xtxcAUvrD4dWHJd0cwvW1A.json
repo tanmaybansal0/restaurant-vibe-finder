@@ -1,0 +1,45 @@
+{
+  "venue_id": "xtxcAUvrD4dWHJd0cwvW1A",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Intimate"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, Warm",
+      "noiseLevel": "Quiet, Background Music",
+      "crowdedness": "Moderate to Busy on Weekends",
+      "decor": "Elegant, Intimate",
+      "music": "Soft, Ambient"
+    },
+    "suitableFor": [
+      "Date Night",
+      "Intimate Gatherings",
+      "Solo Dining"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Elegant",
+      "Authentic",
+      "Quiet",
+      "Relaxed",
+      "Sophisticated",
+      "Attentive Service",
+      "Impressive Wine Selection"
+    ],
+    "similarVenueTypes": [
+      "Upscale Bistros",
+      "Intimate Wine Bars",
+      "Refined Ethnic Restaurants"
+    ],
+    "uniqueAttributes": [
+      "Authentic Korean Cuisine",
+      "Homemade Pasta",
+      "Impressive Wine Pairing"
+    ]
+  },
+  "cached_at": "2025-03-08T23:43:42.603Z"
+}

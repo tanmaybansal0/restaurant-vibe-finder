@@ -1,0 +1,47 @@
+{
+  "venue_id": "rp8S7scxOkVVeG7dNneMGQ",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Upscale"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, Intimate",
+      "noiseLevel": "Quiet, Relaxed",
+      "crowdedness": "Can get Crowded on Weekends",
+      "decor": "Elegant, Rustic-Chic",
+      "music": "Quiet, Background"
+    },
+    "suitableFor": [
+      "Date Night",
+      "Intimate Gatherings",
+      "Business Meetings",
+      "Solo Dining"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Elegant",
+      "Authentic",
+      "Upscale",
+      "Relaxed",
+      "Quiet",
+      "Attentive Service",
+      "Delicious Food"
+    ],
+    "similarVenueTypes": [
+      "Upscale Italian Restaurants",
+      "Intimate Cocktail Bars",
+      "Romantic Neighborhood Bistros"
+    ],
+    "uniqueAttributes": [
+      "Authentic Italian Cuisine",
+      "Impressive Wine Selection",
+      "Homemade Pasta",
+      "Tiramisu to Die For"
+    ]
+  },
+  "cached_at": "2025-03-08T23:36:43.463Z"
+}

@@ -1,0 +1,45 @@
+{
+  "venue_id": "WG639VkTjmK5dzydd1BBJA",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Intimate"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, Warm",
+      "noiseLevel": "Quiet, Relaxed",
+      "crowdedness": "Moderately Busy on Weekends",
+      "decor": "Classic Italian, Rustic Charm",
+      "music": "Soft, Background"
+    },
+    "suitableFor": [
+      "Date Night",
+      "Intimate Gatherings",
+      "Quiet Meals"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Authentic",
+      "Relaxed",
+      "Charming",
+      "Refined",
+      "Elegant",
+      "Homey",
+      "Inviting"
+    ],
+    "similarVenueTypes": [
+      "Upscale Italian Restaurants",
+      "Neighborhood Bistros",
+      "Intimate Trattorias"
+    ],
+    "uniqueAttributes": [
+      "Homemade Pasta",
+      "Impressive Wine Selection",
+      "Authentic Italian Ambiance"
+    ]
+  },
+  "cached_at": "2025-03-08T23:36:42.833Z"
+}

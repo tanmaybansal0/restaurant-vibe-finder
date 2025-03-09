@@ -1,0 +1,46 @@
+{
+  "venue_id": "test-business-1",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Upscale"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, intimate lighting",
+      "noiseLevel": "Quiet, with background music",
+      "crowdedness": "Can get crowded on weekends, but maintains an intimate setting",
+      "decor": "Elegant, rustic Italian decor with warm tones",
+      "music": "Quiet, soothing background music"
+    },
+    "suitableFor": [
+      "Date night",
+      "Intimate gatherings",
+      "Quiet dinner",
+      "Business meetings"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Authentic",
+      "Upscale",
+      "Elegant",
+      "Quiet",
+      "Relaxed",
+      "Sophisticated",
+      "Refined"
+    ],
+    "similarVenueTypes": [
+      "Upscale Italian restaurants",
+      "Wine bars",
+      "Intimate European-style bistros"
+    ],
+    "uniqueAttributes": [
+      "Homemade, authentic Italian cuisine",
+      "Impressive wine selection that pairs well with the food",
+      "Attentive service without being intrusive"
+    ]
+  },
+  "cached_at": "2025-03-08T23:34:26.117Z"
+}

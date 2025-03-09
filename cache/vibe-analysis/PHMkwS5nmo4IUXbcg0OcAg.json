@@ -1,0 +1,46 @@
+{
+  "venue_id": "PHMkwS5nmo4IUXbcg0OcAg",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Intimate"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, Warm",
+      "noiseLevel": "Quiet, Relaxed",
+      "crowdedness": "Moderately Busy, Especially on Weekends",
+      "decor": "Elegant, Rustic",
+      "music": "Soft, Background"
+    },
+    "suitableFor": [
+      "Date Night",
+      "Intimate Gatherings",
+      "Quiet Dinners"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Authentic",
+      "Relaxed",
+      "Elegant",
+      "Rustic",
+      "Attentive Service",
+      "Impressive Wine Selection",
+      "Delicious Food"
+    ],
+    "similarVenueTypes": [
+      "Upscale Bistros",
+      "Intimate Wine Bars",
+      "Romantic Italian Restaurants"
+    ],
+    "uniqueAttributes": [
+      "Authentic Mexican Cuisine",
+      "Homemade Pasta Dishes",
+      "Delectable Desserts (Tiramisu)",
+      "Intimate, Dimly Lit Setting"
+    ]
+  },
+  "cached_at": "2025-03-08T23:43:42.629Z"
+}

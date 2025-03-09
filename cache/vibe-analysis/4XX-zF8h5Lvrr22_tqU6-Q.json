@@ -1,0 +1,53 @@
+{
+  "venue_id": "4XX-zF8h5Lvrr22_tqU6-Q",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Upscale"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, intimate lighting",
+      "noiseLevel": "Quiet, with a peaceful background music",
+      "crowdedness": "Can get a bit crowded on weekends, but maintains an intimate setting",
+      "decor": "Elegant, Italian-inspired decor with a refined, sophisticated aesthetic",
+      "music": "Quiet, background music that complements the atmosphere"
+    },
+    "suitableFor": [
+      "Date night",
+      "Special occasions",
+      "Intimate gatherings",
+      "Business meetings"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Intimate",
+      "Sophisticated",
+      "Authentic",
+      "Elegant",
+      "Refined",
+      "Quiet",
+      "Relaxed",
+      "Upscale",
+      "Inviting",
+      "Atmospheric",
+      "Homey",
+      "Charming",
+      "Delightful"
+    ],
+    "similarVenueTypes": [
+      "Upscale Italian restaurants",
+      "Fine dining establishments",
+      "Intimate wine bars",
+      "Romantic bistros"
+    ],
+    "uniqueAttributes": [
+      "Authentic Italian cuisine with a focus on homemade pasta",
+      "Impressive wine selection that pairs well with the menu",
+      "Attentive and personalized service that enhances the dining experience",
+      "Cozy, intimate setting that creates a sense of exclusivity and luxury"
+    ]
+  },
+  "cached_at": "2025-03-08T23:43:43.003Z"
+}

@@ -1,0 +1,181 @@
+{
+  "id": "wGFSTTB6b4MHJJUzBnVJeg",
+  "alias": "top-thai-greenwich-new-york",
+  "name": "Top Thai Greenwich",
+  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/4xK8iIj2rZrRvP9MMG7yOA/o.jpg",
+  "is_claimed": true,
+  "is_closed": false,
+  "url": "https://www.yelp.com/biz/top-thai-greenwich-new-york?adjust_creative=DRvWc2Y0OLP_6JyWjgBJfA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=DRvWc2Y0OLP_6JyWjgBJfA",
+  "phone": "+16467264418",
+  "display_phone": "(646) 726-4418",
+  "review_count": 2109,
+  "categories": [
+    {
+      "alias": "thai",
+      "title": "Thai"
+    },
+    {
+      "alias": "cocktailbars",
+      "title": "Cocktail Bars"
+    },
+    {
+      "alias": "halal",
+      "title": "Halal"
+    }
+  ],
+  "rating": 4.4,
+  "location": {
+    "address1": "235 Sullivan St",
+    "address2": "",
+    "address3": null,
+    "city": "New York",
+    "zip_code": "10012",
+    "country": "US",
+    "state": "NY",
+    "display_address": [
+      "235 Sullivan St",
+      "New York, NY 10012"
+    ],
+    "cross_streets": "3rd St & Bleecker St"
+  },
+  "coordinates": {
+    "latitude": 40.729771,
+    "longitude": -73.999392
+  },
+  "photos": [],
+  "price": "$$",
+  "hours": [
+    {
+      "open": [
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "1500",
+          "day": 0
+        },
+        {
+          "is_overnight": false,
+          "start": "1630",
+          "end": "2100",
+          "day": 0
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "1500",
+          "day": 1
+        },
+        {
+          "is_overnight": false,
+          "start": "1630",
+          "end": "2100",
+          "day": 1
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "1500",
+          "day": 2
+        },
+        {
+          "is_overnight": false,
+          "start": "1630",
+          "end": "2100",
+          "day": 2
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "1500",
+          "day": 3
+        },
+        {
+          "is_overnight": false,
+          "start": "1630",
+          "end": "2100",
+          "day": 3
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "1500",
+          "day": 4
+        },
+        {
+          "is_overnight": false,
+          "start": "1630",
+          "end": "2200",
+          "day": 4
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "1500",
+          "day": 5
+        },
+        {
+          "is_overnight": false,
+          "start": "1630",
+          "end": "2200",
+          "day": 5
+        },
+        {
+          "is_overnight": false,
+          "start": "1100",
+          "end": "1500",
+          "day": 6
+        },
+        {
+          "is_overnight": false,
+          "start": "1630",
+          "end": "2100",
+          "day": 6
+        }
+      ],
+      "hours_type": "REGULAR",
+      "is_open_now": true
+    }
+  ],
+  "transactions": [
+    "pickup",
+    "delivery"
+  ],
+  "messaging": {
+    "url": "https://www.yelp.com/raq/wGFSTTB6b4MHJJUzBnVJeg?adjust_creative=DRvWc2Y0OLP_6JyWjgBJfA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=DRvWc2Y0OLP_6JyWjgBJfA#popup%3Araq",
+    "use_case_text": "Message the Business"
+  },
+  "reviews": [
+    {
+      "id": "review1",
+      "rating": 5,
+      "text": "This place has an amazing ambiance! The lighting is perfect for a romantic dinner, and the staff is attentive without being intrusive. The pasta is authentic and delicious - definitely try the homemade fettuccine.",
+      "time_created": "2024-02-15 18:30:22",
+      "user": {
+        "name": "John D."
+      }
+    },
+    {
+      "id": "review2",
+      "rating": 4,
+      "text": "Great food and atmosphere. It can get a bit crowded on weekend evenings, but the intimate setting makes it perfect for date night. The wine selection is impressive and pairs wonderfully with their dishes.",
+      "time_created": "2024-01-20 19:15:42",
+      "user": {
+        "name": "Sarah M."
+      }
+    },
+    {
+      "id": "review3",
+      "rating": 5,
+      "text": "One of the coziest Italian spots in the city. The dim lighting and quiet background music create a wonderful atmosphere. Their tiramisu is to die for!",
+      "time_created": "2023-12-10 20:45:11",
+      "user": {
+        "name": "Michael T."
+      }
+    }
+  ],
+  "environment": {
+    "lighting": "moderate",
+    "crowdedness": "moderate"
+  },
+  "cached_at": "2025-03-09T00:02:29.603Z"
+}

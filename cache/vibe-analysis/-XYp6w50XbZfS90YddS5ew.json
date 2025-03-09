@@ -1,0 +1,46 @@
+{
+  "venue_id": "-XYp6w50XbZfS90YddS5ew",
+  "analysis": {
+    "primaryVibe": "Romantic",
+    "secondaryVibes": [
+      "Cozy",
+      "Upscale"
+    ],
+    "ambienceFactors": {
+      "lighting": "Dim, warm lighting, perfect for a romantic dinner",
+      "noiseLevel": "Quiet, with a soothing background music",
+      "crowdedness": "Can get a bit crowded on weekends, but maintains an intimate setting",
+      "decor": "Elegant, with a refined Italian aesthetic",
+      "music": "Quiet, background music that complements the atmosphere"
+    },
+    "suitableFor": [
+      "Date night",
+      "Intimate gatherings",
+      "Business meetings",
+      "Solo dining"
+    ],
+    "vibeKeywords": [
+      "Romantic",
+      "Cozy",
+      "Upscale",
+      "Intimate",
+      "Refined",
+      "Authentic",
+      "Quiet",
+      "Elegant",
+      "Attentive service",
+      "Impressive wine selection"
+    ],
+    "similarVenueTypes": [
+      "Upscale Italian restaurants",
+      "Intimate fine dining establishments",
+      "Romantic date night spots"
+    ],
+    "uniqueAttributes": [
+      "Authentic Italian cuisine with a Thai twist",
+      "Impressive wine selection that pairs well with the dishes",
+      "Attentive and non-intrusive service that enhances the overall experience"
+    ]
+  },
+  "cached_at": "2025-03-08T23:38:11.698Z"
+}

@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Match - Find Your Perfect Spot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #5c2d91;
+      --secondary-color: #ff6b6b;
+      --light-bg: #f8f9fa;
+      --dark-bg: #212529;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      padding-bottom: 2rem;
+    }
+    
+    .navbar {
+      background-color: var(--primary-color);
+    }
+    
+    .brand-text {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1.5rem;
+      border: none;
+    }
+    
+    .card-header {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-primary:hover {
+      background-color: #4a2477;
+      border-color: #4a2477;
+    }
+    
+    .btn-outline-primary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-outline-primary:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .venue-card {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    
+    .venue-img {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .vibe-tag {
+      background-color: rgba(92, 45, 145, 0.1);
+      color: var(--primary-color);
+      border-radius: 50px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    
+    .comparison-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .venue-option {
+      flex: 1;
+      max-width: 48%;
+    }
+    
+    .btn-choose {
+      width: 100%;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .loading {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    
+    .progress-indicator {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    
+    .progress-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #dee2e6;
+      margin: 0 5px;
+    }
+    
+    .progress-dot.active {
+      background-color: var(--primary-color);
+    }
+    
+    .progress-dot.completed {
+      background-color: #28a745;
+    }
+    
+    .final-recommendation {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .final-image {
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    
+    .reason-item {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .reason-item i {
+      color: var(--primary-color);
+      margin-right: 0.5rem;
+      margin-top: 0.25rem;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand brand-text" href="#">VIBE MATCH</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Step 1: Initial Form -->
+    <div id="step1" class="step-container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Tell us what you're looking for</h5>
+            </div>
+            <div class="card-body">
+              <form id="vibeForm">
+                <div class="mb-3">
+                  <label class="form-label">What type of place are you looking for?</label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="venueType" id="typeRestaurant" value="restaurant" checked>
+                      <label class="form-check-label" for="typeRestaurant">Restaurant</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="venueType" id="typeBar" value="bar">
+                      <label class="form-check-label" for="typeBar">Bar</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Subtype section for restaurants (cuisine) -->
+                <div id="cuisineSection" class="mb-3">
+                  <label class="form-label">Cuisine type (optional)</label>
+                  <select class="form-select" id="cuisineSelect">
+                    <option value="">Any cuisine</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="indian">Indian</option>
+                    <option value="thai">Thai</option>
+                    <option value="french">French</option>
+                    <option value="american">American</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="korean">Korean</option>
+                  </select>
+                </div>
+
+                <!-- Subtype section for bars -->
+                <div id="barTypeSection" class="mb-3" style="display: none;">
+                  <label class="form-label">Bar type (optional)</label>
+                  <select class="form-select" id="barTypeSelect">
+                    <option value="">Any bar</option>
+                    <option value="cocktail">Cocktail Bar</option>
+                    <option value="wine">Wine Bar</option>
+                    <option value="beer">Beer Bar</option>
+                    <option value="pub">Pub</option>
+                    <option value="sports">Sports Bar</option>
+                    <option value="lounge">Lounge</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="location" class="form-label">Location</label>
+                  <input type="text" class="form-control" id="location" value="New York, NY" required>
+                </div>
+
+                <!-- Add price selection -->
+                <div class="mb-3">
+                  <label for="price" class="form-label">Price Range</label>
+                  <select class="form-select" id="price">
+                    <option value="">Any price</option>
+                    <option value="1">$ (Inexpensive)</option>
+                    <option value="2">$$ (Moderate)</option>
+                    <option value="3">$$$ (Expensive)</option>
+                    <option value="4">$$$$ (Very Expensive)</option>
+                    <option value="1,2">$ - $$ (Inexpensive to Moderate)</option>
+                    <option value="2,3">$$ - $$$ (Moderate to Expensive)</option>
+                    <option value="3,4">$$$ - $$$$ (Expensive to Very Expensive)</option>
+                  </select>
+                </div>
+
+                <div class="mb-4">
+                  <label for="vibeDescription" class="form-label">Describe the vibe you're looking for</label>
+                  <textarea class="form-control" id="vibeDescription" rows="3" placeholder="e.g., A cozy speakeasy with craft cocktails and intimate lighting, perfect for a date night..." required></textarea>
+                  <div class="form-text">Be as specific as possible about the atmosphere, mood, and experience you want.</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Find My Vibe Match</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Venue Comparison Interface -->
+    <div id="step2" class="step-container hidden">
+      <div class="row justify-content-center mb-4">
+        <div class="col-12 text-center">
+          <h2>Which venue do you prefer?</h2>
+          <p class="text-muted">We'll narrow down your perfect match</p>
+          
+          <div class="progress-indicator mt-3 mb-4">
+            <div id="progressDots"></div>
+            <p class="text-muted mt-2"><span id="comparisonsRemaining">5</span> more comparisons to go</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comparison-container">
+        <!-- Left Venue Option -->
+        <div class="venue-option">
+          <div class="card venue-card">
+            <img src="" id="venueImageA" class="venue-img" alt="Venue A">
+            <div class="card-body">
+              <h5 class="card-title" id="venueNameA"></h5>
+              <div class="d-flex justify-content-between mb-3">
+                <div>
+                  <span class="badge bg-primary me-2" id="venueRatingA"></span>
+                  <span class="badge bg-secondary" id="venuePriceA"></span>
+                </div>
+              </div>
+              <p class="card-text text-muted mb-2" id="venueAddressA"></p>
+              <div id="venueCategoriesA" class="mb-2"></div>
+              
+              <hr>
+              
+              <h6>Vibe</h6>
+              <div id="vibeKeywordsA" class="mb-3"></div>
+              <p id="vibePrimaryA" class="mb-1"></p>
+            </div>
+            <div class="card-footer">
+              <a href="#" id="venueUrlA" class="btn btn-sm btn-outline-primary mb-2" target="_blank">View on Yelp</a>
+              <button class="btn btn-primary btn-choose" id="chooseButtonA">Choose This Venue</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Venue Option -->
+        <div class="venue-option">
+          <div class="card venue-card">
+            <img src="" id="venueImageB" class="venue-img" alt="Venue B">
+            <div class="card-body">
+              <h5 class="card-title" id="venueNameB"></h5>
+              <div class="d-flex justify-content-between mb-3">
+                <div>
+                  <span class="badge bg-primary me-2" id="venueRatingB"></span>
+                  <span class="badge bg-secondary" id="venuePriceB"></span>
+                </div>
+              </div>
+              <p class="card-text text-muted mb-2" id="venueAddressB"></p>
+              <div id="venueCategoriesB" class="mb-2"></div>
+              
+              <hr>
+              
+              <h6>Vibe</h6>
+              <div id="vibeKeywordsB" class="mb-3"></div>
+              <p id="vibePrimaryB" class="mb-1"></p>
+            </div>
+            <div class="card-footer">
+              <a href="#" id="venueUrlB" class="btn btn-sm btn-outline-primary mb-2" target="_blank">View on Yelp</a>
+              <button class="btn btn-primary btn-choose" id="chooseButtonB">Choose This Venue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading hidden">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2" id="loadingText">Finding the perfect venues for your vibe...</p>
+    </div>
+
+    <!-- Step 3: Final Recommendation -->
+    <div id="step3" class="step-container hidden">
+      <div class="row justify-content-center mb-4">
+        <div class="col-12 text-center">
+          <h2>Your Perfect Vibe Match</h2>
+          <p class="text-muted">Based on your preferences</p>
+        </div>
+      </div>
+
+      <div class="final-recommendation">
+        <div class="card">
+          <img src="" id="finalImage" class="final-image" alt="Recommended Venue">
+          <div class="card-body">
+            <h4 class="card-title mb-1" id="finalName"></h4>
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge bg-primary me-2" id="finalRating"></span>
+              <span class="badge bg-secondary me-3" id="finalPrice"></span>
+              <div id="finalCategories" class="text-muted"></div>
+            </div>
+            <p class="card-text" id="finalAddress"></p>
+            
+            <hr>
+
+            <h5>Venue Vibe</h5>
+            <div id="finalVibeKeywords" class="mb-3"></div>
+            <p id="finalVibePrimary" class="mb-3"></p>
+            
+            <h5>Why It's Perfect For You</h5>
+            <div id="finalReasons" class="mb-4"></div>
+            
+            <div class="d-grid gap-2">
+              <a href="#" class="btn btn-primary" id="finalLink" target="_blank">View on Yelp</a>
+              <button class="btn btn-outline-primary" id="startOverButton">Start Over</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 mt-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h2 class="mb-4">About Vibe Match</h2>
+          <p class="lead">Vibe Match uses AI to help you find restaurants and bars that match exactly the atmosphere and experience you're looking for.</p>
+          <p>Unlike traditional recommendation platforms that rely solely on categories and ratings, Vibe Match analyzes thousands of reviews, photos, and descriptions to understand the true character of each venue.</p>
+          <p>Our comparison approach helps you make clear choices between options, ensuring your final recommendation isn't just a good place, but the perfect place for your specific mood and occasion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Global state
+    const state = {
+      currentStep: 1,
+      venueType: 'restaurant',
+      subtype: '',
+      location: 'New York, NY',
+      price: '', // Added price state
+      vibeDescription: '',
+      venues: [], // All venues fetched
+      currentVenues: { a: null, b: null }, // Current comparison pair
+      comparisonsDone: 0,
+      maxComparisons: 5,
+      winner: null, // The winning venue after all comparisons
+      pendingVenues: [] // Queue of venues to be compared
+    };
+
+    // DOM elements
+    const elements = {
+      step1: document.getElementById('step1'),
+      step2: document.getElementById('step2'),
+      step3: document.getElementById('step3'),
+      loadingIndicator: document.getElementById('loadingIndicator'),
+      loadingText: document.getElementById('loadingText'),
+      vibeForm: document.getElementById('vibeForm'),
+      venueTypeRadios: document.querySelectorAll('input[name="venueType"]'),
+      cuisineSection: document.getElementById('cuisineSection'),
+      barTypeSection: document.getElementById('barTypeSection'),
+      cuisineSelect: document.getElementById('cuisineSelect'),
+      barTypeSelect: document.getElementById('barTypeSelect'),
+      locationInput: document.getElementById('location'),
+      priceSelect: document.getElementById('price'), // Added price select
+      vibeDescriptionInput: document.getElementById('vibeDescription'),
+      
+      // Comparison elements
+      venueImageA: document.getElementById('venueImageA'),
+      venueNameA: document.getElementById('venueNameA'),
+      venueRatingA: document.getElementById('venueRatingA'),
+      venuePriceA: document.getElementById('venuePriceA'),
+      venueAddressA: document.getElementById('venueAddressA'),
+      venueCategoriesA: document.getElementById('venueCategoriesA'),
+      vibeKeywordsA: document.getElementById('vibeKeywordsA'),
+      vibePrimaryA: document.getElementById('vibePrimaryA'),
+      venueUrlA: document.getElementById('venueUrlA'),
+      chooseButtonA: document.getElementById('chooseButtonA'),
+      
+      venueImageB: document.getElementById('venueImageB'),
+      venueNameB: document.getElementById('venueNameB'),
+      venueRatingB: document.getElementById('venueRatingB'),
+      venuePriceB: document.getElementById('venuePriceB'),
+      venueAddressB: document.getElementById('venueAddressB'),
+      venueCategoriesB: document.getElementById('venueCategoriesB'),
+      vibeKeywordsB: document.getElementById('vibeKeywordsB'),
+      vibePrimaryB: document.getElementById('vibePrimaryB'),
+      venueUrlB: document.getElementById('venueUrlB'),
+      chooseButtonB: document.getElementById('chooseButtonB'),
+      
+      progressDots: document.getElementById('progressDots'),
+      comparisonsRemaining: document.getElementById('comparisonsRemaining'),
+      
+      // Final recommendation elements
+      finalImage: document.getElementById('finalImage'),
+      finalName: document.getElementById('finalName'),
+      finalRating: document.getElementById('finalRating'),
+      finalPrice: document.getElementById('finalPrice'),
+      finalCategories: document.getElementById('finalCategories'),
+      finalAddress: document.getElementById('finalAddress'),
+      finalVibeKeywords: document.getElementById('finalVibeKeywords'),
+      finalVibePrimary: document.getElementById('finalVibePrimary'),
+      finalReasons: document.getElementById('finalReasons'),
+      finalLink: document.getElementById('finalLink'),
+      startOverButton: document.getElementById('startOverButton')
+    };
+
+    // Initialize event listeners
+    function initEventListeners() {
+      // Toggle between restaurant and bar subtypes
+      elements.venueTypeRadios.forEach(radio => {
+        radio.addEventListener('change', toggleVenueSubtypes);
+      });
+
+      // Form submission
+      elements.vibeForm.addEventListener('submit', handleFormSubmit);
+
+      // Choose buttons
+      elements.chooseButtonA.addEventListener('click', () => handleChoice('a'));
+      elements.chooseButtonB.addEventListener('click', () => handleChoice('b'));
+
+      // Start over button
+      elements.startOverButton.addEventListener('click', resetApp);
+    }
+
+    // Toggle between restaurant and bar subtypes
+    function toggleVenueSubtypes() {
+      const venueType = document.querySelector('input[name="venueType"]:checked').value;
+      state.venueType = venueType;
+
+      if (venueType === 'restaurant') {
+        elements.cuisineSection.style.display = 'block';
+        elements.barTypeSection.style.display = 'none';
+      } else {
+        elements.cuisineSection.style.display = 'none';
+        elements.barTypeSection.style.display = 'block';
+      }
+    }
+
+    // Handle form submission
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      // Store form values in state
+      state.location = elements.locationInput.value;
+      state.vibeDescription = elements.vibeDescriptionInput.value;
+      state.price = elements.priceSelect.value;
+      
+      if (state.venueType === 'restaurant') {
+        state.subtype = elements.cuisineSelect.value;
+      } else {
+        state.subtype = elements.barTypeSelect.value;
+      }
+
+      // Show loading indicator
+      showStep('loading');
+      elements.loadingText.textContent = 'Finding venues that match your vibe...';
+
+      try {
+        // Fetch venues based on criteria
+        const venues = await fetchVenues();
+        
+        if (venues.length < 2) {
+          throw new Error('Not enough venues found to compare. Please try different criteria.');
+        }
+        
+        // Set up state for comparisons
+        state.venues = venues;
+        state.pendingVenues = [...venues];
+        state.comparisonsDone = 0;
+        state.winner = null;
+        state.rejectedVenues = []; // Clear any previous rejected venues
+        
+        // Set up initial comparison
+        await setupNextComparison();
+        
+        // Setup progress dots
+        setupProgressDots();
+        
+        // Show step 2
+        showStep(2);
+      } catch (error) {
+        console.error('Error finding venues:', error);
+        alert('Sorry, we encountered an error finding venues. Please try again.');
+        showStep(1);
+      }
+    }
+
+    // Fetch venues based on criteria
+    async function fetchVenues() {
+      try {
+        const response = await fetch(`/api/venues/search?type=${state.venueType}&subtype=${state.subtype}&location=${encodeURIComponent(state.location)}&price=${state.price}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch venues');
+        }
+        
+        const data = await response.json();
+        
+        if (!data.success || !data.venues || data.venues.length === 0) {
+          throw new Error(data.error || 'No venues found');
+        }
+        
+        // Shuffle the venues to get random pairs
+        return shuffle(data.venues);
+      } catch (error) {
+        console.error('Error fetching venues:', error);
+        
+        // Return fake data for testing
+        return [
+          {
+            id: 'test-venue-1',
+            name: 'Test Restaurant A',
+            image_url: 'https://via.placeholder.com/400x300?text=Restaurant+A',
+            rating: 4.5,
+            price: '$$$',
+            categories: ['Italian', 'Wine Bar'],
+            location: '123 Main St, New York, NY',
+            url: 'https://yelp.com',
+            primaryVibe: 'romantic',
+            vibeKeywords: ['intimate', 'cozy', 'candlelit', 'quiet', 'elegant']
+          },
+          {
+            id: 'test-venue-2',
+            name: 'Test Restaurant B',
+            image_url: 'https://via.placeholder.com/400x300?text=Restaurant+B',
+            rating: 4.2,
+            price: '$$',
+            categories: ['Italian', 'Casual'],
+            location: '456 Broadway, New York, NY',
+            url: 'https://yelp.com',
+            primaryVibe: 'casual',
+            vibeKeywords: ['lively', 'bustling', 'family-friendly', 'classic']
+          },
+          {
+            id: 'test-venue-3',
+            name: 'Test Restaurant C',
+            image_url: 'https://via.placeholder.com/400x300?text=Restaurant+C',
+            rating: 4.7,
+            price: '$$$$',
+            categories: ['French', 'Fine Dining'],
+            location: '789 5th Ave, New York, NY',
+            url: 'https://yelp.com',
+            primaryVibe: 'upscale',
+            vibeKeywords: ['elegant', 'sophisticated', 'fine dining', 'exclusive']
+          },
+          {
+            id: 'test-venue-4',
+            name: 'Test Restaurant D',
+            image_url: 'https://via.placeholder.com/400x300?text=Restaurant+D',
+            rating: 4.0,
+            price: '$$',
+            categories: ['Mediterranean', 'Tapas'],
+            location: '321 West St, New York, NY',
+            url: 'https://yelp.com',
+            primaryVibe: 'lively',
+            vibeKeywords: ['vibrant', 'social', 'energetic', 'trendy']
+          },
+          {
+            id: 'test-venue-5',
+            name: 'Test Restaurant E',
+            image_url: 'https://via.placeholder.com/400x300?text=Restaurant+E',
+            rating: 4.6,
+            price: '$$$',
+            categories: ['Japanese', 'Sushi'],
+            location: '555 East Rd, New York, NY',
+            url: 'https://yelp.com',
+            primaryVibe: 'modern',
+            vibeKeywords: ['sleek', 'minimalist', 'contemporary', 'stylish']
+          },
+          {
+            id: 'test-venue-6',
+            name: 'Test Restaurant F',
+            image_url: 'https://via.placeholder.com/400x300?text=Restaurant+F',
+            rating: 4.3,
+            price: '$$',
+            categories: ['American', 'Diner'],
+            location: '777 Park Pl, New York, NY',
+            url: 'https://yelp.com',
+            primaryVibe: 'nostalgic',
+            vibeKeywords: ['classic', 'retro', 'comforting', 'casual']
+          }
+        ];
+      }
+    }
+
+    // Set up the next comparison
+    async function setupNextComparison() {
+      // For the first comparison, take two venues from the pending queue
+      if (state.comparisonsDone === 0) {
+        const venueA = state.pendingVenues.shift();
+        const venueB = state.pendingVenues.shift();
+        
+        if (!venueA || !venueB) {
+          // We don't have enough venues to compare
+          if (state.winner) {
+            // We have a winner from previous comparisons
+            finishComparisons();
+          } else if (state.pendingVenues.length === 1) {
+            // Only one venue left, make it the winner
+            state.winner = state.pendingVenues[0];
+            finishComparisons();
+          } else {
+            // No venues left and no winner (shouldn't happen)
+            throw new Error('Not enough venues to compare');
+          }
+          return;
+        }
+        
+        // Store current venues
+        state.currentVenues = {
+          a: venueA,
+          b: venueB
+        };
+      } else {
+        // This branch should not be called in the updated version
+        // as we're directly updating the venues in handleChoice
+        console.error('setupNextComparison called but should be handled in handleChoice');
+      }
+      
+      // Update UI
+      updateVenueCard('a', state.currentVenues.a);
+      updateVenueCard('b', state.currentVenues.b);
+      
+      // Update remaining comparisons
+      elements.comparisonsRemaining.textContent = state.maxComparisons - state.comparisonsDone;
+    }
+
+    // Handle venue choice
+    async function handleChoice(choice) {
+    // Store the winner and keep it for the next comparison
+    const winner = state.currentVenues[choice];
+    const loser = state.currentVenues[choice === 'a' ? 'b' : 'a'];
+    
+    // Add the loser to rejected venues
+    state.rejectedVenues.push(loser.id);
+    
+    // Update progress dots
+    updateProgressDot(state.comparisonsDone);
+    
+    // Increment comparison counter
+    state.comparisonsDone++;
+    
+    // Check if we're done
+    if (state.comparisonsDone >= state.maxComparisons || state.pendingVenues.length < 1) {
+        // The winner is our final recommendation
+        state.winner = winner;
+        
+        // Show loading indicator
+        showStep('loading');
+        elements.loadingText.textContent = 'Finalizing your perfect match...';
+        
+        // Finish the process
+        await finishComparisons();
+    } else {
+        // Set up next comparison with the winner and a new venue
+        // Show loading indicator briefly for better UX
+        showStep('loading');
+        elements.loadingText.textContent = 'Setting up next comparison...';
+        
+        setTimeout(async () => {
+        // Take one new venue from the pending queue
+        const newOpponent = state.pendingVenues.shift();
+        
+        // The winner stays, only the loser gets replaced
+        if (choice === 'a') {
+            state.currentVenues = {
+            a: winner,        // Keep the winner in the same position
+            b: newOpponent    // Replace the loser with a new venue
+            };
+        } else {
+            state.currentVenues = {
+            a: newOpponent,   // Replace the loser with a new venue
+            b: winner         // Keep the winner in the same position
+            };
+        }
+        
+        // Update UI
+        updateVenueCard('a', state.currentVenues.a);
+        updateVenueCard('b', state.currentVenues.b);
+        
+        // Update remaining comparisons
+        elements.comparisonsRemaining.textContent = state.maxComparisons - state.comparisonsDone;
+        
+        showStep(2);
+        }, 500);
+    }
+    }
+
+    // Finish the comparison process and show recommendation
+    // Finish the comparison process and show recommendation
+    async function finishComparisons() {
+    try {
+        // Get detailed info for the winning venue
+        let venueDetails;
+        
+        // If we have a winner from our comparisons
+        if (state.winner) {
+        try {
+            venueDetails = await getVenueDetails(state.winner.id);
+        } catch (error) {
+            console.error('Error getting winner details:', error);
+            // Use the basic winner info we already have
+            venueDetails = state.winner;
+        }
+        } else {
+        // This shouldn't happen with our new logic, but just in case
+        console.error('No winner found, using fallback');
+        venueDetails = {
+            id: 'fallback-final',
+            name: 'Our Recommendation',
+            image_url: 'https://via.placeholder.com/800x400?text=Recommendation',
+            rating: 4.5,
+            price: '$$$',
+            categories: ['Restaurant'],
+            location: 'New York, NY',
+            url: 'https://www.yelp.com',
+            vibe: {
+            primary: 'appealing',
+            secondary: [],
+            keywords: ['recommended', 'selected', 'quality'],
+            suitableFor: ['your preferences']
+            },
+            why: [
+            "Based on your comparisons, this is our top recommendation",
+            "It matches your described preferences",
+            "Selected from the venues you preferred"
+            ]
+        };
+        }
+        
+        // Update UI with final recommendation
+        updateFinalRecommendation(venueDetails);
+        
+        // Show step 3
+        showStep(3);
+    } catch (error) {
+        console.error('Error finalizing recommendation:', error);
+        
+        // Use the winner we already have as fallback
+        if (state.winner) {
+        updateFinalRecommendation(state.winner);
+        showStep(3);
+        } else {
+        // If no winner at all, show error
+        alert('Sorry, we encountered an error finding your perfect match. Please try again.');
+        resetApp();
+        }
+    }
+    }
+    // Get detailed venue information
+    async function getVenueDetails(venueId) {
+      try {
+        const response = await fetch(`/api/venues/${venueId}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to get venue details');
+        }
+        
+        const data = await response.json();
+        
+        if (!data.success || !data.venue) {
+          throw new Error(data.error || 'Failed to get venue details');
+        }
+        
+        return data.venue;
+      } catch (error) {
+        console.error('Error getting venue details:', error);
+        
+        // Return the basic venue info we already have
+        return {
+          ...state.winner,
+          vibeAnalysis: {
+            primaryVibe: state.winner.primaryVibe || 'appealing',
+            secondaryVibes: [],
+            vibeKeywords: state.winner.vibeKeywords || [],
+            suitableFor: ['dining', 'your preferences'],
+            uniqueAttributes: []
+          },
+          why: [
+            "Based on your comparisons, this was your preferred venue",
+            "It best matches your described vibe preferences",
+            "Our system has identified it as your top choice"
+          ]
+        };
+      }
+    }
+
+    // Update venue card with venue data
+    function updateVenueCard(side, venue) {
+      const elements = {
+        image: document.getElementById(`venueImage${side.toUpperCase()}`),
+        name: document.getElementById(`venueName${side.toUpperCase()}`),
+        rating: document.getElementById(`venueRating${side.toUpperCase()}`),
+        price: document.getElementById(`venuePrice${side.toUpperCase()}`),
+        address: document.getElementById(`venueAddress${side.toUpperCase()}`),
+        categories: document.getElementById(`venueCategories${side.toUpperCase()}`),
+        vibeKeywords: document.getElementById(`vibeKeywords${side.toUpperCase()}`),
+        vibePrimary: document.getElementById(`vibePrimary${side.toUpperCase()}`),
+        url: document.getElementById(`venueUrl${side.toUpperCase()}`)
+      };
+      
+      elements.image.src = venue.image_url || 'https://via.placeholder.com/400x300?text=No+Image';
+      elements.name.textContent = venue.name;
+      elements.rating.textContent = `${venue.rating} ★`;
+      elements.price.textContent = venue.price || 'Price N/A';
+      elements.address.textContent = venue.location || '';
+      elements.url.href = venue.url || '#';
+      
+      // Clear existing categories
+      elements.categories.innerHTML = '';
+      const categoryList = Array.isArray(venue.categories) ? venue.categories : 
+                           (typeof venue.categories === 'string' ? [venue.categories] : []);
+      
+      categoryList.forEach(category => {
+        const categoryText = typeof category === 'object' ? category.title : category;
+        const span = document.createElement('span');
+        span.textContent = categoryText;
+        span.classList.add('badge', 'bg-light', 'text-dark', 'me-1', 'mb-1');
+        elements.categories.appendChild(span);
+      });
+      
+      // Clear existing vibe keywords
+      elements.vibeKeywords.innerHTML = '';
+      const keywords = venue.vibeKeywords || 
+                     (venue.vibeAnalysis ? venue.vibeAnalysis.vibeKeywords : []) || 
+                     [];
+      
+      keywords.slice(0, 5).forEach(keyword => {
+        const span = document.createElement('span');
+        span.textContent = keyword;
+        span.classList.add('vibe-tag');
+        elements.vibeKeywords.appendChild(span);
+      });
+      
+      elements.vibePrimary.textContent = `Primary vibe: ${venue.primaryVibe || (venue.vibeAnalysis ? venue.vibeAnalysis.primaryVibe : 'appealing')}`;
+    }
+
+    // Update final recommendation card
+    function updateFinalRecommendation(venue) {
+      elements.finalImage.src = venue.image_url || 'https://via.placeholder.com/800x400?text=No+Image';
+      elements.finalName.textContent = venue.name;
+      elements.finalRating.textContent = `${venue.rating} ★`;
+      elements.finalPrice.textContent = venue.price || 'Price N/A';
+      elements.finalAddress.textContent = venue.location || venue.location?.address1 || '';
+      elements.finalLink.href = venue.url || '#';
+      
+      // Clear existing categories
+      elements.finalCategories.innerHTML = '';
+      const categoryList = Array.isArray(venue.categories) ? venue.categories : 
+                           (typeof venue.categories === 'string' ? [venue.categories] : []);
+      
+      categoryList.forEach(category => {
+        const categoryText = typeof category === 'object' ? category.title : category;
+        const span = document.createElement('span');
+        span.textContent = categoryText;
+        span.classList.add('me-2');
+        elements.finalCategories.appendChild(span);
+      });
+      
+      // Clear existing vibe keywords
+      elements.finalVibeKeywords.innerHTML = '';
+      const keywords = venue.vibeKeywords || 
+                     (venue.vibeAnalysis ? venue.vibeAnalysis.vibeKeywords : []) || 
+                     [];
+      
+      keywords.forEach(keyword => {
+        const span = document.createElement('span');
+        span.textContent = keyword;
+        span.classList.add('vibe-tag');
+        elements.finalVibeKeywords.appendChild(span);
+      });
+      
+      const primaryVibe = venue.primaryVibe || (venue.vibeAnalysis ? venue.vibeAnalysis.primaryVibe : 'appealing');
+      const secondaryVibes = venue.secondaryVibes || (venue.vibeAnalysis ? venue.vibeAnalysis.secondaryVibes : []) || [];
+      
+      elements.finalVibePrimary.textContent = `This place has a ${primaryVibe} atmosphere` + 
+        (secondaryVibes.length > 0 ? ` with elements of ${secondaryVibes.join(', ')}.` : '.');
+      
+      // Clear existing reasons
+      elements.finalReasons.innerHTML = '';
+      
+      // Add reasons
+      const reasons = venue.why || [
+        "This venue was your preferred choice",
+        "It best matches your described vibe preferences",
+        "Based on your comparisons, this is the perfect spot for you"
+      ];
+      
+      reasons.forEach(reason => {
+        const div = document.createElement('div');
+        div.classList.add('reason-item');
+        
+        const icon = document.createElement('i');
+        icon.classList.add('bi', 'bi-check-circle-fill');
+        
+        const text = document.createElement('span');
+        text.textContent = reason;
+        
+        div.appendChild(icon);
+        div.appendChild(text);
+        elements.finalReasons.appendChild(div);
+      });
+    }
+
+    // Setup progress dots
+    function setupProgressDots() {
+      elements.progressDots.innerHTML = '';
+      
+      for (let i = 0; i < state.maxComparisons; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('progress-dot');
+        if (i === 0) {
+          dot.classList.add('active');
+        }
+        elements.progressDots.appendChild(dot);
+      }
+    }
+
+    // Update progress dot
+    function updateProgressDot(index) {
+      const dots = elements.progressDots.querySelectorAll('.progress-dot');
+      if (dots[index]) {
+        dots[index].classList.remove('active');
+        dots[index].classList.add('completed');
+      }
+      
+      if (dots[index + 1]) {
+        dots[index + 1].classList.add('active');
+      }
+    }
+
+    // Show a specific step
+    function showStep(step) {
+      // Hide all steps
+      elements.step1.classList.add('hidden');
+      elements.step2.classList.add('hidden');
+      elements.step3.classList.add('hidden');
+      elements.loadingIndicator.classList.add('hidden');
+      
+      // Show requested step
+      if (step === 'loading') {
+        elements.loadingIndicator.classList.remove('hidden');
+      } else {
+        elements[`step${step}`].classList.remove('hidden');
+        state.currentStep = step;
+      }
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+
+    // Reset the app
+    function resetApp() {
+      // Reset state
+      state.currentStep = 1;
+      state.venues = [];
+      state.pendingVenues = [];
+      state.comparisonsDone = 0;
+      state.winner = null;
+      
+      // Show step 1
+      showStep(1);
+    }
+
+    // Utility function to shuffle an array (Fisher-Yates algorithm)
+    function shuffle(array) {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    }
+
+    // Initialize the app
+    function init() {
+      initEventListeners();
+    }
+
+    // Start the app
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
